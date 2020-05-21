@@ -1,0 +1,318 @@
+/*
+RESET CSS
+*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0 0 450px 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: arial, helvetica sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6,
+nav, ol, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul li div{
+    display: inline;
+}
+
+table {
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+table tr td {
+    padding: 2px;
+    margin: 2px;
+}
+
+form{
+    width: 100%;
+}
+
+hr{
+    margin: 5px;
+}
+
+a{
+    color: darkred;
+}
+.tips{
+    font-size: smaller;
+    color: dimgrey;
+}
+.actions{
+    text-align: right;
+}
+.introtext{
+    background: beige;
+    border: 1px solid saddlebrown;
+    width: 450px;
+    margin: 20px auto;
+    padding: 30px;
+    background: url("images/background.jpeg");
+}
+
+.disclaimer{
+    position: fixed;
+    z-index:10;
+    width: 100%;
+    height: 100%;
+
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.7);
+
+}
+.disclaimer .disclaimer-content{
+    opacity: 1;
+    height: 80%;
+    overflow-y: scroll;
+    margin: 70px;
+    padding: 20px;
+    background: beige;
+    border: 2px solid white;
+}
+
+.disclaimer .disclaimer-content .alert{
+    display: inline-block;
+}
+/* --- Curerent player --- */
+.current-player, .gamename{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.player-list{
+    text-align: center;
+}
+.player-list ul{
+    display: inline;
+
+}
+.player-list ul li{
+    display: inline-block;
+    background: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    min-width: 150px;
+}
+.player-list ul li.connected{ background: cadetblue; }
+.player-list ul li.disconnected{ background: silver; color: lightgray}
+.player-list ul li.active{ animation: 2s animateBG infinite; }
+@keyframes animateBG {
+    50%{ background-color: indianred; }
+    to { background-color: cadetblue; }
+}
+
+.active-player{
+    text-align: center;
+}
+
+.active-player .turn-name{
+    font-weight: bold;
+    color: darkred;
+}
+
+.card-counter{
+    width: 7px;
+    height: 12px;
+    background: black;
+    float:right;
+    margin: 1px;
+    overflow: hidden;
+}
+.deck-pile{
+    width: 150px;
+    height: 190px;
+    background: cadetblue;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.deck-pile .number{
+    font-size: 18px;
+    font-weight: bold;
+}
+.discard-pile{
+    width: 150px;
+    height: 190px;
+    background: darkred;
+    color: silver;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.discard-pile .number{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.vocabulary{
+
+}
+.table-area{
+    background: lightgray;
+    margin-bottom: 40px;
+}
+.setup{
+    border: 5px solid black;
+    padding: 30px;
+    margin: 20px;
+    background: white;
+}
+#tablePile{
+    min-height: 500px;
+}
+#tablePile .card{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 9;
+}
+#tablePile .card.lifted{
+    transform: scale(1.1);
+    box-shadow: 20px 20px 10px grey;
+    transition: transform 150ms; /* Animation */
+
+}
+@media screen {
+
+}
+
+.hand-pile{
+    padding: 20px;
+    background: silver;
+    margin-bottom: 150px;
+}
+
+.card{
+    width: 120px;
+    height: 180px;
+
+    cursor: grab;
+    border: 3px solid black;
+    background-color: #f1f1f1;
+    margin: 7px;
+    padding: 0 5px 5px 5px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px grey;
+
+    text-align: center;
+}
+.card-wrapper{
+    display: inline-block;
+    border: 1px solid white;
+}
+
+.card hr{
+    margin:2px;
+}
+.card .title{
+    font-size: 11px;
+}
+.card .content{
+    width: 100%;
+    overflow: hidden;
+    font-size: 13px;
+}
+.card img{
+    max-width:100%;
+    max-height:150px;
+
+    display: inline-block;
+}
+
+.card button.googles{
+    border: none;
+    background: white;
+    float: right;
+    font-size: 9px;
+}
+#sampleCard{
+    width: 150px;
+    height: 220px;
+    background: cadetblue;
+    position: fixed;
+    bottom: -220px;
+    left: 45%;
+    border-radius: 10px;
+    opacity: 1;
+}
+.animate-discard{
+
+    animation: 400ms animateDiscard;
+}
+@keyframes animateDiscard {
+    to {
+        bottom: 60%;
+        left: 90%;
+    }
+}
+.animate-display{
+    animation: 400ms animateDisplay;
+}
+@keyframes animateDisplay {
+    to {
+        bottom: 60%;
+        left: 20%;
+    }
+}
+
+.pulse{
+    animation: 1200ms pulse;
+}
+@keyframes pulse {
+    25%{ border-color: coral;}
+    50%{ border-color: black;}
+    75%{ border-color: coral;}
+    to { border-color: black;}
+}
+
+#endGame{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#questions{
+}
+
+#questions .question{
+    margin-top: -10px;
+    border: 1px solid silver;
+    margin: 7px;
+    padding: 7px;
+    text-align: left;
+}
+
+.shown{
+    display: block;
+}
+.hidden{
+    display: none;
+}
