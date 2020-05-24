@@ -3,7 +3,6 @@ function $( query ){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-
     refreshState(true);
     autoRefresh = setInterval(refreshState, 2000);
     init_lift();
@@ -144,9 +143,7 @@ function refreshState(force){
                 $('#endGame')[0].className='shown';
                 $('#questions')[0].className='hidden';
             }
-
         }
-
     }
     if(typeof gamehash === 'undefined'){$('#errors')[0].innerHTML = '<div class="alert alert-warning">Erreur hash non initialisé.</div>';}
     xhr.open("GET", "./api/ping.php?currentplayer="+currentPlayer+'&gamehash='+gamehash, true);

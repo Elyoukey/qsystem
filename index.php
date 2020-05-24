@@ -16,7 +16,7 @@ $mission = ( empty($_GET['mission']) )?'':$_GET['mission'];
     <meta name="author" content="Elyoukey">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css?v=1.0">
-    <script src="js/scripts.js?v=1.0"></script>
+    <script src="js/home.js?v=1.0"></script>
 </head>
 
 <body style="text-align: center; padding-top: 100px;">
@@ -36,16 +36,15 @@ $mission = ( empty($_GET['mission']) )?'':$_GET['mission'];
     </div>
     <div class="tips">
         A unique gamename. Share it with your other team mates.
-
     </div>
     <div>
         <input type="text" name="gamename" value="<?php echo (empty($_GET['gamename']))?'':$_GET['gamename'];?>" required="required"/>
     </div>
-<div>
-    <label>Choose case:</label>
-</div>
     <div>
-        <select name="deckname">
+        <label>Choose case:</label>
+    </div>
+    <div>
+        <select name="deckname" id="deckname">
             <option value="plantation" <?php if($mission=='plantation'){echo "selected='selected'";}?> >Plantation</option>
             <option value="runaway_journeys" <?php if($mission=='runaway_journeys'){echo "selected='selected'";}?> >Runaway journeys</option>
             <option value="trial_in_greatbritain" <?php if($mission=='trial_in_greatbritain'){echo "selected='selected'";}?> >Trials in GreatBritain</option>
@@ -53,13 +52,17 @@ $mission = ( empty($_GET['mission']) )?'':$_GET['mission'];
             <option value="middle_passage" <?php if($mission=='middle_passage'){echo "selected='selected'";}?>  >Middle passage</option>
         </select>
     </div>
-<div>
+    <div>
+        <div class="credits" style="display: block" id="credits_plantation"><?php include('./decks/plantation/credits.htm');?></div>
+        <div class="credits" style="display: none" id="credits_journeys"><?php include('./decks/runaway_journeys/credits.htm');?></div>
+        <div class="credits" style="display: none" id="credits_trial_in_greatbritain"><?php include('./decks/trial_in_greatbritain/credits.htm');?></div>
+        <div class="credits" style="display: none" id="credits_quarantine_and_auctions"><?php include('./decks/quarantine_and_auctions/credits.htm');?></div>
+        <div class="credits" style="display: none" id="credits_middle_passage"><?php include('./decks/middle_passage/credits.htm');?></div>
+    </div>
     <div>
         <input type="submit" class="btn btn-success" value="Enter"/>
 
     </div>
-
-</div>
 </form>
 </body>
 </html>
