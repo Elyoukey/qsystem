@@ -53,8 +53,9 @@ $mission = ( empty($_GET['mission']) )?'':$_GET['mission'];
         </select>
     </div>
     <div>
+        Created by team: <br/>
         <div class="credits" style="display: block" id="credits_plantation"><?php include('./decks/plantation/credits.htm');?></div>
-        <div class="credits" style="display: none" id="credits_journeys"><?php include('./decks/runaway_journeys/credits.htm');?></div>
+        <div class="credits" style="display: none" id="credits_runaway_journeys"><?php include('./decks/runaway_journeys/credits.htm');?></div>
         <div class="credits" style="display: none" id="credits_trial_in_greatbritain"><?php include('./decks/trial_in_greatbritain/credits.htm');?></div>
         <div class="credits" style="display: none" id="credits_quarantine_and_auctions"><?php include('./decks/quarantine_and_auctions/credits.htm');?></div>
         <div class="credits" style="display: none" id="credits_middle_passage"><?php include('./decks/middle_passage/credits.htm');?></div>
@@ -63,6 +64,15 @@ $mission = ( empty($_GET['mission']) )?'':$_GET['mission'];
         <input type="submit" class="btn btn-success" value="Enter"/>
 
     </div>
+
+    <div class="supercredits" style="position: fixed;bottom:0; height: 100px; background: #b3b3b3; font-size: small; width:100%; line-height: 14px; padding:5px;">
+        This game is brought to you by the Students from seconde 3 and 4<br/>
+        European Section - History and Geography class<br/>
+        Lycée français Jean Mermoz de Dakar<br/>
+        <br/>
+        2019-2020
+    </div>
+    <div style="height:150px;"></div>
 </form>
 </body>
 </html>
